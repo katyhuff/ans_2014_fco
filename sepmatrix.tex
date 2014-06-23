@@ -1,0 +1,36 @@
+\subsection{Matrix-Based Separation Facility Model}
+
+By describing the separations process as a simple matrix of efficiencies, a 
+simple 1:N material stream transformation is conducted. The specific process 
+chemistry for the separation at hand is treated as elemental, as representative 
+of a non-laser separations process. The matrix of separation efficiencies has a 
+default value: the identity matrix. In this context, the identity matrix 
+represents complete and perfect elemental separation without losses. 
+
+\begin{align}
+matrix
+\label{defaultsep}
+\end{align}
+
+Thus, for realistic separations, the user is expected to produce an efficiency 
+matrix representing the separations technology of interest to them. 
+By requesting the feedstock from the 
+appropriate markets, the facility acquires an unseparated feedstock stream. 
+Based on the input parameters  in Table \ref{tab:sepmatrix}, the separations 
+process proceeds within the timesteps and other constraints of the simulation. 
+
+
+\begin{table}
+\centering
+\begin{tabular}{|l|r|r|r|}
+\hline
+\textbf{Parameter} & \textbf{Units} & \textbf{Default} & \textbf{Range}\\ 
+\end{tabular}
+\caption{Input parameters for the Matrix-Based Separation Facility Model}
+\label{tab:sepmatrix}
+\end{table}
+
+Thereafter, separated streams as well as a stream of losses are offered the 
+appropriate markets for consumption by other facilities. In the transition 
+scenario at hand, the StreamBlender fuel fabridation facility purchases the 
+streams it desires in order to produce SFR fuel. 
