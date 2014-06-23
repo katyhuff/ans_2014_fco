@@ -1,10 +1,9 @@
 %        File: !comp!expand(``%:p:t'')!comp!
 %     Created: !comp!strftime(``%a %b %d %I:00 %p %Y '').substitute(strftime('%Z'), '\<\(\w\)\(\w*\)\>\(\W\|$\)', '\1', 'g')!comp!
 % Last Change: !comp!strftime(``%a %b %d %I:00 %p %Y '').substitute(strftime('%Z'), '\<\(\w\)\(\w*\)\>\(\W\|$\)', '\1', 'g')!comp!
-
 \documentclass{anstrans}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\title{Extensions to the Cyclus Framework in Support of Transition Scenario Capability}
+\title{Extensions to the Cyclus Ecosystem in Support of Transition Scenario Capability}
 \author{Kathryn~D.~Huff$^1$, Massimiliano Fratoni$^1$}
 
 %% uncomment these next five only if using anstrans
@@ -16,21 +15,28 @@
 \newcommand{\units}[1] {\:\text{#1}}%
 \newcommand{\SN}{S$_N$}%{S$_\text{N}$}%{$S_N$}%
 
+\usepackage{multicol}
+
 \date{}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
 \input{intro} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Simulation Description}
 \input{simdescription}
 \input{existingfacs}
+\input{capabilitygap}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Module Extensions}
-\input{decomminst}
+
 \input{commodconverter}
 \input{streamblender}
 \input{sepmatrix}
+\input{decomminst}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Results and Analysis}

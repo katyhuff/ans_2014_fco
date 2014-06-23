@@ -1,9 +1,20 @@
 \subsection{Stream Blender Facility : Fuel Fabrication}
 
-The new Facility Model will handle the 'magical' transformation of various tru
-and u streams into SFR fuel. The need for this is largely because the currently
-available model in Cyclus for multi-stream fuel fabrication is quite detailed
-and has conservation of mass and isotope checks. This level of detail would
-slow down the simulation unnecessarily and  this "magic" scenario would fail
-the physics checks. Thus, a simpler version of that model without all the
-physics checks will be necessary. It should be quick ( a day ) to make.
+The process of fuel fabrication from separated elemental streams can most
+concisely be described as a blending of streams. To most generically represent
+this process, the Stream Blender Facility has been created.  This new Facility
+Model handles the combination of various commodity streams in appropriate
+proportions to acheive a goal recipe.  
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|r|r|r|}
+\hline
+\textbf{Parameter} & \textbf{Units} & \textbf{Default} & \textbf{Range}\\
+\hline
+& & & \\
+\hline
+\end{tabular}
+\caption{Input parameters for the Stream Blender Facility Model}
+\label{tab:commodconverter}
+\end{table}
