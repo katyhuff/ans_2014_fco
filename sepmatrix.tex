@@ -8,7 +8,37 @@ default value: the identity matrix. In this context, the identity matrix
 represents complete and perfect elemental separation without losses. 
 
 \begin{align}
-matrix
+  \left[
+    \begin{array}{c c c c c c c}
+      \eta_{11} & . & . & . & . & . & \eta_{1M} \\
+      \eta_{21} & . & . & . & . & . & \eta_{2M} \\
+      . & . & . & . & . & . & . \\
+      . & . & . & . & . & . & . \\
+      . & . & . & . & . & . & . \\
+      \eta_{N1} & .  & . & . & . & . & \eta_{NM} \\
+    \end{array}
+    \right]
+  \left[
+    \begin{array}{c}
+      I_1\\
+      I_2\\
+      . \\
+      . \\
+      . \\
+      I_N\\
+    \end{array}
+    \right]
+    =
+    \left[
+      \begin{array}{ c }
+        E_1\\
+        E_2\\
+        .\\
+        .\\
+        .\\
+        E_M\\
+      \end{array}
+      \right]
 \label{defaultsep}
 \end{align}
 
