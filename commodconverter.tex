@@ -1,5 +1,13 @@
 \subsection{Commodity Converter Facility}
 
+One versatile facility model contributed by this work is a simple 
+representation of timed storage. After recieving material, this facility 
+waits for a user-defined time period. Once that time period has passed, the 
+material object is offered up as a new commodity type. 
+
+In the case of a storage facility, for example, this model requests a commodity 
+such as spent fuel, then waits for a cooling period before offering the same 
+material as cooled spent fuel.
 
 \begin{table}[h!]
 \centering
@@ -7,7 +15,10 @@
 \hline
 \textbf{Parameter} & \textbf{Units} & \textbf{Default} & \textbf{Range}\\
 \hline
-& & & \\
+Input Commodity& string & ``'' & any string\\
+Output Commodity& string & ``'' & any string\\
+Delay Time & months & $0$ & $0-\infty$\\
+Storage Capacity & kg & \infty &$0-\infty$ \\
 \hline
 \end{tabular}
 \caption{Input parameters for the Commodity Converter Facility Model}
