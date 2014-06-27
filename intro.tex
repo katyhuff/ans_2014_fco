@@ -2,20 +2,20 @@
 %      Describe the technical problem clearly
 %      support it with a method
 
-The Cyclus Fuel Cycle Simulator \cite{carlsen_cyclus_2014} is a framework for 
+The \Cyclus Fuel Cycle Simulator \cite{carlsen_cyclus_2014} is a framework for 
 assessment of nuclear fuel cycle options. This simulation framework is 
 incomplete without a suite of dynamically loadable libraries representing the 
 process physics of the nuclear fuel cycle (i.e. mining, fuel fabrication, 
 chemical processing, transmutation, reprocessing, etc.).  In this work, support 
-archetype models have been developed to extend the capabilities of the Cyclus 
+archetype models have been developed to extend the capabilities of the \Cyclus 
 ecosystem. Those model implementations are described as are the capabilities 
 that they contribute. 
 
-The Cyclus simulator provides some basic libraries within the additional 
+The \Cyclus simulator provides some basic libraries within the additional 
 modules repository, Cycamore \cite{carlsen_cyclus_2014}. However, extension of 
-Cyclus with new capabilities is community-driven, relying on contributions by 
+\Cyclus with new capabilities is community-driven, relying on contributions by 
 user-developers.  This summary describes a set of libraries that have been 
-contibuted to the Cyclus framework to enable market-driven transition analyses. 
+contibuted to the \Cyclus framework to enable market-driven transition analyses. 
 
 \subsection{Motivation}
 
@@ -37,7 +37,7 @@ availability). In that case, technology readiness may be applied only as a
 constraint. 
 
 % What will this work show?
-This summary describes additions to the Cyclus Fuel Cycle Simulator necessary 
+This summary describes additions to the \Cyclus Fuel Cycle Simulator necessary 
 to enable market driven decommissioning and deployment for a specific, base 
 case scenario.  
 
@@ -58,23 +58,23 @@ generate a coherent simulation.
 
 % What has this group previously done?
 
-The development version of the Cyclus simulator has long been capable of 
+The development version of the \Cyclus simulator has long been capable of 
 technology driven scenarios \cite{gidden_cyclus_2012}, those scenarios relied 
 on explicit deployment profiles. This capability is equivalent to the 
 guess-and-check methods of other simulators, as the user-defined deployment 
 profiles may lead to incongruous scenarios leading to insufficient material or 
 processing availability and unexpected idle facilities.  
 
-However, the Cyclus simulator, due to its dynamic resource exchange paradigm, is capable
+However, the \Cyclus simulator, due to its dynamic resource exchange paradigm, is capable
 of dynamically checking material availability in the simulation and responding
 accordingly.  
 
 % Guidance to the reader
 
-This summary describes the Agents added to the Cyclus simulator ecosystem that 
+This summary describes the Agents added to the \Cyclus simulator ecosystem that 
 harness the resource exchange paragdigm to enable transition scenarios based on 
 dynamic material availability in the resource exchange system. By emphasizing 
-generality, these capabilities have been contributed to the Cyclus ecosystem as 
+generality, these capabilities have been contributed to the \Cyclus ecosystem as 
 Agents. 
 
 % What should the reader watch for in the paper?
@@ -88,7 +88,7 @@ Agents.
 % What hypotheses do I mean to  test?
 % What did I actually test?
 
-Extensions to the Cyclus framework are necessary because the available
+Extensions to the \Cyclus framework are necessary because the available
 institution, region, and facility archetypes packaged with the Cycamore
 repository are not sufficient to model the specific goals of all simulation 
 descriptions.  In this case, Facility Agents were contributed to support fuel fabrication specifications in the transition scenario
@@ -97,8 +97,8 @@ market-driven decommissioning of old technologies.
 
 
 This is a canonical example of the need for extension
-capability in Cyclus. That is, each scenario specification of interest in fuel
+capability in \Cyclus. That is, each scenario specification of interest in fuel
 cycle analysis is usually sufficiently pathological that modifications must
 almost always be made in any simulation framework. The modularity built into
-the Cyclus framework allows extension without modification of the core logic.  
+the \Cyclus framework allows extension without modification of the core logic.  
 
