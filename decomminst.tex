@@ -1,10 +1,20 @@
 
 \subsection{Deommissioning Institution}
 
-The new Institution Agent will be based on an already existing institution
-model, but will need to have a market-based look-ahead deployment capability to
-faithfully model this scenario. We could actually get away with not doing this,
-because currently, deployment scenarios based on pre-defined analytical
-functions are possible, but I feel like that would be cheating and I think this
-is a good chance to show off \Cyclus' flexibility. This might be slightly longer
-to create ( a few days to write, a few days to debug ).
+The new Institution Agent was based on an already existing institution
+model, but required a market-based look-ahead deployment capability to
+faithfully model this scenario. 
+
+That is, by relying on inheritance from a mixin class already available within 
+the \Cyclus toolkit, an institution can deploy and decommission facilities 
+based on any decision criteria. By also relying on the dynamic resource 
+exchange interface, it is possible to base that decision criteria on the 
+availability of resources being offered by other facility agents in the 
+simulation. 
+
+In this case, a specific quantity of separated transuranic material must exist 
+before an LWR can be decommissioned (to be replaced with three SFRs). That 
+decision criteria, combined with the capability of decommissioning facilities, 
+gives the Decommisioning Institution. 
+
+
