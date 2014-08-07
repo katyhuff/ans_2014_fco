@@ -3,17 +3,21 @@
 %      support it with a method
 
 The \Cyclus Fuel Cycle Simulator \cite{carlsen_cyclus_2014} is a framework for 
-assessment of nuclear fuel cycle options. This simulation framework is 
-incomplete without a suite of dynamically loadable libraries representing the 
-process physics of the nuclear fuel cycle (i.e. mining, fuel fabrication, 
-chemical processing, transmutation, reprocessing, etc.).  
+assessment of nuclear fuel cycle options. While \Cyclus has simulated system 
+transitions from the current fuel cycle strategy to a future option, those 
+transitions have never previously been driven by market forces in the 
+simulation.  This summary describes a set of libraries that have been 
+contibuted to the \Cyclus framework to enable a market-driven transition 
+analysis.
 
-Within the additional modules repository, Cycamore 
+This simulation framework is incomplete without a suite of dynamically loadable 
+libraries representing the process physics of the nuclear fuel cycle (i.e.  
+mining, fuel fabrication, chemical processing, transmutation, reprocessing, 
+etc.).  Within the additional modules repository, Cycamore 
 \cite{carlsen_cycamore_2014}, the \Cyclus ecosystem provides some basic 
 libraries to represent these processes. However, extension of \Cyclus with new 
-capabilities is community-driven, relying on contributions by user-developers.  
-This summary describes a set of libraries that have been contibuted to the 
-\Cyclus framework to enable market-driven transition analyses. 
+capabilities is community-driven, relying on contributions by user-developers. 
+The libraries contributed in this work provide market-driven transition capability.
 
 \subsection{Motivation}
 
@@ -31,10 +35,9 @@ RD\&D decision-making.
 
 % Why did I do the work?
 Transition scenarios are often modeled from a technology availability 
-perspective, deploying new technologies based on their readiness.  Arguably, it 
-is more realistic to drive a simulation based on market forces (i.e., material 
-availability). In that case, technology readiness may be applied only as a 
-constraint. 
+perspective, deploying new technologies based on their readiness.  A transition 
+drive by market forces (i.e., material availability) is more realistic . In 
+that case, technology readiness may be applied only as a constraint. 
 
 % What will this work show?
 This summary describes additions to the \Cyclus Fuel Cycle Simulator necessary 
@@ -50,11 +53,11 @@ base-case scenario.
 % Who else has done what?
 % How?
 
-Previous fuel cycle simulators have previously achieved market-driven deployment 
+Previous fuel cycle simulators have achieved market-driven deployment 
 capability using look-ahead algorithms for facility deployment 
-\cite{schneider_nfcsim:_2005}.  These simulators typically conduct guess-and-check 
-simulation attempts, restarting or crashing if their algorithm failed to 
-generate a coherent simulation.
+\cite{schneider_nfcsim:_2005,jacobson_user_2011}.  These simulators typically 
+conduct guess-and-check simulation attempts, restarting or crashing if their 
+algorithm failed to generate a coherent simulation.
 
 % What has this group previously done?
 
