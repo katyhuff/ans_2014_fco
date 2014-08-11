@@ -4,8 +4,8 @@ By describing the separations process as a simple matrix of efficiencies, a
 material stream transformation can be conducted. The specific process chemistry 
 for the separation at hand is treated as elemental, as representative of a 
   non-laser separations process. The efficiencies must be defined to transform 
-  an incoming composition vector $I$ with $N$ constituent amounts, $I_n$ to an 
-  outgoing set of $M$ streams, $E_m$. The efficiency matrix $\eta$ is therefore 
+  an incoming composition vector, $I$, with $N$ constituent amounts, $I_n$ to an 
+  outgoing set of $M$ streams, $E_m$. The efficiency matrix, $\eta$, is therefore 
   an $N\times M$ matrix of efficiencies. The matrix of separation efficiencies 
   has a default value: the identity matrix of size $N\times N$. In this 
   context, the identity matrix represents complete and perfect elemental 
@@ -46,12 +46,12 @@ for the separation at hand is treated as elemental, as representative of a
 \label{defaultsep}
 \end{align}
 
-For realistic separations, the user is expected to produce an efficiency 
+For realistic separations, the user is expected to provide an efficiency 
 matrix representing the separations technology of interest to them. 
 By requesting the feedstock from the 
 appropriate markets, the facility acquires an unseparated feedstock stream. 
 Based on the input parameters  in Table \ref{tab:sepmatrix}, the separations 
-process proceeds within the timesteps and other constraints of the simulation. 
+process proceeds within the time steps and other constraints of the simulation. 
 
 \begin{table}[h!]
 \centering
@@ -72,4 +72,4 @@ $\eta$ Matrix & \% yield & Identity & positive matrix \\
 Thereafter, separated streams as well as a stream of losses are offered the 
 appropriate markets for consumption by other facilities. In the transition 
 scenario at hand, the StreamBlender fuel fabrication facility purchases the 
-streams it desires in order to produce SFR fuel. 
+streams it desires in order to produce \gls{SFR} fuel. 

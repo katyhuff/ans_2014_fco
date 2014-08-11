@@ -1,20 +1,18 @@
 
 \subsection{Market Driven Institution}
 \label{sec:mktdriveninst}
-The new Institution Agent was based on an already existing institution
-model, but required a market-driven deployment capability to
-faithfully model this scenario. 
-
-That is, by relying on inheritance from a mixin class already available within 
-the \Cyclus toolkit, an institution can deploy and decommission facilities 
-based on any decision criteria. By also relying on the dynamic resource 
-exchange interface, it is possible to base that decision criteria on the 
-availability of resources being offered by other facility agents in the 
-simulation. 
+A new Institution Agent has been based on an already existing institution
+model in Cycamore and added a market-driven deployment capability to faithfully 
+model this scenario.  That is, by relying on inheritance from a mix-in class 
+already available within the \Cyclus toolkit, an institution can deploy and 
+decommission facilities based on any decision criteria. By also relying on the 
+dynamic resource exchange interface, it is possible to base that decision 
+criteria on the availability of resources being offered by other facility 
+agents in the simulation. 
 
 In this case, a specific quantity of separated transuranic material must exist 
-before an LWR can be decommissioned (to be replaced with three SFRs). That 
+before an \gls{LWR} can be decommissioned (to be replaced with three \glspl{SFR}). That 
 decision criteria, combined with the capability of decommissioning facilities, 
-gives the Decommisioning Institution. 
+gives the Market Driven Institution. 
 
 

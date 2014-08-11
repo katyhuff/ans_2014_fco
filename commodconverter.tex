@@ -1,13 +1,11 @@
 \subsection{Commodity Converter Facility}
 
-One versatile facility model contributed by this work is a simple
-representation of timed commodity transformation. After recieving a resource
-such as a material, this facility waits for a user-defined time period. Once
+One versatile facility model contributed by this work is the 
+CommodityConverter, a simple representation of timed commodity transformation. After receiving a resource
+(e.g., a material), this facility waits for a user-defined time period. Once
 that time period has passed, the resource is offered to the resource exchange
 system as a new commodity type. With this behavior, the Commodity Converter
-facility is ideal for representing storage.  
-
-In the case of a storage facility, for example, this model requests a commodity 
+facility is ideal for representing storage.  In that case, this model requests a commodity 
 such as spent fuel, then waits for a cooling period before offering the same 
 Material Resource as a cooled spent fuel Commodity.
 
@@ -28,9 +26,9 @@ Storage Capacity & kg & $\infty$ &$0-\infty$ \\
 \end{table}
 
 
-Note that Commodity and Material are distinct concepts in the cyclus framework.
+Note that Commodity and Material are distinct concepts in the \Cyclus framework.
 A Material is a subtype of Resource. All Resources have a Commodity type. A
-single Material composition in cyclus can therefore be a ``fuel'' or``waste''
-Commodity or anything else you want to call it, irrespective of the material
-composition. 
+single Material composition in \Cyclus can therefore be a ``fuel'' or``waste''
+Commodity or any arbitrary string registered within the simulation, 
+irrespective of the isotopic composition. 
 
