@@ -1,0 +1,26 @@
+\subsection{Stream Blender Facility : Fuel Fabrication}
+
+The process of fuel fabrication from separated materials streams can most
+concisely be described as blending into a recipe. To most generically represent
+this process, the Stream Blender Facility has been added to the \Cyclus 
+ecosystem.  This new Facility Agent handles the combination of various 
+commodity streams in appropriate proportions to achieve a goal recipe.  
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|r|r|r|}
+\hline
+\textbf{Parameter} & \textbf{Units} & \textbf{Default} & \textbf{Range}\\
+\hline
+Input Commodities & set of strings& ``''& \\
+Output Commodities & set of strings&``'' & \\
+Waste Commodity & string & ``waste'' & \\
+Production Capacity& kg/month& $\infty$& $0-\infty$\\
+Process Time& months & $0$ & $0-\infty$ \\
+Source Preferences& - & - & - \\
+Goal Recipe& mass vector & - & -  \\
+\hline
+\end{tabular}
+\caption{Input parameters for the Stream Blender Facility Agent}
+\label{tab:commodconverter}
+\end{table}

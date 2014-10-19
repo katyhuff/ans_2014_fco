@@ -1,0 +1,64 @@
+%        File: ans_2014_fco.tex
+%     Created: June 16, 2014
+\documentclass{anstrans}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Extensions to the \Cyclus Ecosystem in Support of Market-Driven 
+Transition Capability\\ LLNL-PROC-656426}
+\author{Kathryn~D.~Huff$^1$, Massimiliano Fratoni$^1$, Harris R. Greenberg$^2$}
+
+%% uncomment these next five only if using anstrans
+\institute{$^1$Department of Nuclear Engineering, University of California, 2150 Shattuck Ave., Suite 230, Berkeley, CA 94709\\
+huff@berkeley.edu, maxfratoni@berkeley.edu\\
+$^2$ Lawrence Livermore National Laboratory, 7000 East Ave., L-223, Livermore, CA 94550 \\
+greenberg6@llnl.gov }
+\usepackage{graphicx}
+\usepackage{booktabs} % nice rules for tables
+\usepackage{microtype} % if using PDF
+\newcommand{\units}[1] {\:\text{#1}}%
+\newcommand{\SN}{S$_N$}%{S$_\text{N}$}%{$S_N$}%
+
+\usepackage{multicol}
+\usepackage{xspace}
+\newcommand{\Cyclus}{\textsc{Cyclus}\xspace}
+
+\usepackage{longtable}
+\usepackage{placeins}
+
+\usepackage[acronym]{glossaries}
+\makeglossaries
+
+\input{acros}
+\setlength{\columnsep}{0.5 in}
+
+\date{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+\input{intro} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Simulation Description}
+\input{simdescription}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Capability Extensions}
+\input{extensions}
+\input{commodconverter}
+\input{streamblender}
+\input{sepmatrix}
+\input{mktdriveninst}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Results and Analysis}
+\input{results}
+
+\section{Acknowledgements}
+\input{acks}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibliographystyle{ans}
+\bibliography{ans_2014_fco}
+\end{document}
+
+

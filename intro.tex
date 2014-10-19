@@ -1,0 +1,101 @@
+% Provide a summary of the work conducted:
+%      Describe the technical problem clearly
+%      support it with a method
+
+The \Cyclus Fuel Cycle Simulator \cite{carlsen_cyclus_2014} is a framework for 
+assessment of nuclear fuel cycle options. While \Cyclus has previously been 
+capable of system transitions from the current fuel cycle strategy to a future 
+option, those transitions have never previously been driven by market forces in 
+the simulation.  This summary describes a set of libraries 
+\cite{huff_market_2014} that have been contibuted to the \Cyclus framework to 
+enable a market-driven transition analysis.
+
+This simulation framework is incomplete without a suite of dynamically loadable 
+libraries representing the process physics of the nuclear fuel cycle (i.e.  
+mining, fuel fabrication, chemical processing, transmutation, reprocessing, 
+etc.).  Within 
+Cycamore \cite{carlsen_cycamore_2014}, the additional modules repository within 
+the \Cyclus ecosystem, provides some basic 
+libraries to represent these processes. However, extension of \Cyclus with new 
+capabilities is community-driven, relying on contributions by user-developers. 
+The libraries contributed in this work are examples of such contributions.
+
+\subsection{Motivation}
+
+The attractiveness of a new technology can be assessed to first order by 
+evaluating equilibrium fuel cycle scenarios. Equilibrium scenarios are those 
+at steady state, in which technologies are deployed statically. However, 
+transition dynamics leading up to that equilibrium state also contribute to 
+the viability of deploying such a technology \cite{piet_dynamic_2011}.  
+
+% Why did I do the work?
+For this reason, fuel cycle scenario analysis is often concerned with the 
+transition from one nuclear fuel cycle technology or strategy to another. Such 
+analyses are termed ``transition scenarios.''  Transition scenarios seek to 
+model the real world dynamics of such a technology shift, in part to inform 
+\gls{RDD} decision-making. 
+
+% What will this work show?
+Transition scenarios are often modeled from a technology availability 
+perspective, deploying new technologies based on their readiness.  The 
+capability represented by this work, a transition 
+driven by market forces (i.e., material availability) is more realistic. In 
+that case, technology readiness may be applied only as a constraint. 
+
+% What were the central motivations and hypotheses?
+% The justification for the objectives.
+% Why is the work important?
+
+\subsection{Background}
+% Who else has done what?
+% How?
+
+Previous fuel cycle simulators have achieved market-driven deployment 
+capability using look-ahead algorithms for facility deployment 
+\cite{schneider_nfcsim:_2005,jacobson_user_2011}.  These simulators typically 
+conduct guess-and-check simulation attempts, restarting or crashing if their 
+algorithm failed to generate a coherent simulation.
+
+% What has this group previously done?
+
+The development version of the \Cyclus simulator has long been capable of 
+technology driven scenarios \cite{gidden_once-through_2012} that relied 
+on explicit demand or deployment profiles defined by the user. This capability 
+shared the disadvantages of the guess-and-check methods of other simulators, 
+since the user-defined deployment profiles may lead to incongruous scenarios 
+(i.e., insufficient material or processing availability and unexpected idle 
+facilities).  
+
+% Guidance to the reader
+By harnessing the \Cyclus dynamic resource exchange paradigm and emphasizing 
+generality, the Agents contributed in this work are capable of dynamically 
+checking material availability in the simulation and responding accordingly. 
+These contributions thereby enable market-driven transition scenarios for a 
+range of future use cases in the \Cyclus ecosystem.  
+
+% What should the reader watch for in the paper?
+% What are the interesting high points?
+% What strategy did we use?
+
+\subsection{Method}
+% Summary/Conclusion
+% What should the reader expect as conclusion?
+% What does it mean?
+% What hypotheses do I mean to  test?
+% What did I actually test?
+
+Extensions to the \Cyclus framework are necessary because the available
+institution, region, and facility archetypes packaged with the Cycamore
+repository are not sufficient to model the specific goals of all simulation 
+descriptions.  In this case, Facility Agents were contributed to support 
+reprocessing and fuel fabrication specifications in the transition scenario
+definition of interest and an Institution Agent was contributed to support 
+market-driven building and decommissioning of transitioning technologies.  
+
+This is a canonical example of a user-developer's workflow for capability 
+extension in \Cyclus. That is, each scenario specification of interest in fuel
+cycle analysis is usually sufficiently pathological that modifications must
+almost always be made in any simulation framework. This effort demonstrates how 
+the modularity built into
+the \Cyclus framework allows extension without modification of the core logic.  
+
