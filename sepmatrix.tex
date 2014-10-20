@@ -1,17 +1,46 @@
-\subsection{Matrix-Based Separation Facility Model}
+% --------------------------------------------------------------
+\begin{frame}[fragile]
+  \frametitle{Separation Matrix Facility}
+Separation needs to be elemental and should take an arbitrary incoming stream 
+that is separated into streams based on a matrix of efficiencies. It should 
+have input parameters:
 
-By describing the separations process as a simple matrix of efficiencies, a  
-material stream transformation can be conducted. The specific process chemistry 
-for the separation at hand is treated as elemental, as representative of a 
-  non-laser separations process. The efficiencies must be defined to transform 
-  an incoming composition vector, $I$, with $N$ constituent amounts, $I_n$ to an 
-  outgoing set of $M$ streams, $E_m$. The efficiency matrix, $\eta$, is therefore 
-  an $N\times M$ matrix of efficiencies. The matrix of separation efficiencies 
-  has a default value: the identity matrix of size $N\times N$. In this 
-  context, the identity matrix represents complete and perfect elemental 
-  separation without losses. 
+\begin{itemize}
+\item incoming commodity
+\item outgoing commodities
+\item map of element, stream, efficiency
+\end{itemize}
+\begin{figure}[htbp!]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{sm_inherit}
+\end{center}
+\caption{Utilizes interfaces defined in Cyclus.}
+\label{fig:sm_inherit}
+\end{figure}
+\end{frame}
+% --------------------------------------------------------------
+\begin{frame}[fragile]
+  \frametitle{Separation Matrix Facility}
+The efficiencies must be defined to transform :
+\begin{itemize}
+ \item an incoming composition vector, $I$, 
+ \item with $N$ constituent amounts, 
+ \item $I_n$ 
+\end{itemize}
+to 
+\begin{itemize}
+\item an outgoing set of $M$ streams,
+\item $E_m$.
+\end{itemize}
 
-\begin{align}
+\end{frame}
+% --------------------------------------------------------------
+\begin{frame}[fragile]
+The efficiency matrix, $\eta$, is therefore an $N\times M$ matrix of
+efficiencies. The matrix of separation efficiencies has a default value: the
+identity matrix of size $N\times N$. In this context, the identity matrix
+represents complete and perfect elemental separation without losses. 
+\begin{align*}
   \left[
     \begin{array}{c c c c c c c}
       \eta_{11} & . & . & . & . & . & \eta_{1M} \\
@@ -43,33 +72,36 @@ for the separation at hand is treated as elemental, as representative of a
         E_M\\
       \end{array}
       \right]
-\label{defaultsep}
-\end{align}
+\end{align*}
+\end{frame}
 
-For realistic separations, the user is expected to provide an efficiency 
-matrix representing the separations technology of interest to them. 
-By requesting the feedstock from the 
-appropriate markets, the facility acquires an unseparated feedstock stream. 
-Based on the input parameters  in Table \ref{tab:sepmatrix}, the separations 
-process proceeds within the time steps and other constraints of the simulation. 
-
-\begin{table}[h!]
-\centering
-\begin{tabular}{|l|r|r|r|}
-\hline
-\textbf{Parameter} & \textbf{Units} & \textbf{Default} & \textbf{Range}\\ 
-\hline
-In-Commodity & string &``'' & any string \\
-Out-Commodities & map & $N:N$ & any map \\
-Waste Commodity & string & ``waste'' & any string\\
-$\eta$ Matrix & \% yield & Identity & positive matrix \\
-\hline
-\end{tabular}
-\caption{Input parameters for the Matrix-Based Separation Facility Model}
-\label{tab:sepmatrix}
-\end{table}
-
-Thereafter, separated streams as well as a stream of losses are offered the 
-appropriate markets for consumption by other facilities. In the transition 
-scenario at hand, the StreamBlender fuel fabrication facility purchases the 
-streams it desires in order to produce \gls{SFR} fuel. 
+% --------------------------------------------------------------
+\begin{frame}[fragile]
+\footnotesize{
+\begin{lstlisting}
+      <SeparationMatrix>
+        <in_commod>sfr_unf_cool</in_commod>
+        <out_commods>
+          <val>rep_sfr_tru</val>
+          <val>rep_sfr_u</val>
+        </out_commods>
+        <elems>
+          <val>92</val>
+          <val>94</val>
+          <val>95</val>
+        </elems>
+        <effs>
+          <val>1</val>
+          <val>1</val>
+          <val>1</val>
+        </effs>
+        <streams>
+          <val>rep_sfr_u</val>
+          <val>rep_sfr_tru</val>
+          <val>rep_sfr_tru</val>
+        </streams>
+        <process_time>0</process_time>
+      </SeparationMatrix>
+  \end{lstlisting}
+}
+\end{frame}

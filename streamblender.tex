@@ -1,26 +1,85 @@
-\subsection{Stream Blender Facility : Fuel Fabrication}
-
-The process of fuel fabrication from separated materials streams can most
-concisely be described as blending into a recipe. To most generically represent
-this process, the Stream Blender Facility has been added to the \Cyclus 
-ecosystem.  This new Facility Agent handles the combination of various 
+% --------------------------------------------------------------
+\begin{frame}[fragile]
+  \frametitle{Stream Blender} 
+The process specified for SFR fuel fabrication from separated materials streams
+can most concisely be described as blending into a recipe.
+\begin{figure}[htbp!]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{sb_inherit}
+\end{center}
+\caption{Utilizes interfaces defined in Cyclus.}
+\label{fig:sb_inherit}
+\end{figure}
+\end{frame}
+% --------------------------------------------------------------
+\begin{frame}[fragile]
+  \frametitle{Stream Blender}
+This new Facility Agent handles the combination of various 
 commodity streams in appropriate proportions to achieve a goal recipe.  
-
-\begin{table}[h!]
-\centering
-\begin{tabular}{|l|r|r|r|}
-\hline
-\textbf{Parameter} & \textbf{Units} & \textbf{Default} & \textbf{Range}\\
-\hline
-Input Commodities & set of strings& ``''& \\
-Output Commodities & set of strings&``'' & \\
-Waste Commodity & string & ``waste'' & \\
-Production Capacity& kg/month& $\infty$& $0-\infty$\\
-Process Time& months & $0$ & $0-\infty$ \\
-Source Preferences& - & - & - \\
-Goal Recipe& mass vector & - & -  \\
-\hline
-\end{tabular}
-\caption{Input parameters for the Stream Blender Facility Agent}
-\label{tab:commodconverter}
-\end{table}
+\begin{itemize}
+\item incoming commodities
+\item incoming recipes
+\item outgoing commodity
+\item goal recipe
+\item driving isotopes and sources
+\item waste commodity (default = ''waste``)
+\item process time (default = 0)
+\end{itemize}
+\end{frame}
+% --------------------------------------------------------------
+\begin{frame}[fragile]
+\footnotesize{
+\begin{lstlisting}
+  <facility>
+    <name>SFRFuelFab</name>
+    <lifetime>1200</lifetime>
+    <config>
+      <StreamBlender>
+        <in_commods>
+          <val>rep_sfr_tru</val>
+          <val>rep_lwr_tru</val>
+          <val>rep_sfr_u</val>
+          <val>dep_u</val>
+          <val>nat_u</val>
+        </in_commods>
+        <out_commod>fresh_sfr_fuel</out_commod>
+        <out_recipe>fresh_sfr_fuel_recipe</out_recipe>
+        <in_recipes>
+          <val>rep_sfr_tru_recipe</val>
+          <val>rep_lwr_tru_recipe</val>
+          <val>rep_sfr_u_recipe</val>
+          <val>dep_u_recipe</val>
+          <val>nat_u_recipe</val>
+        </in_recipes>
+\end{lstlisting}
+}
+\end{frame}
+% --------------------------------------------------------------
+\begin{frame}[fragile]
+\footnotesize{
+\begin{lstlisting}
+        <isos>
+          <val>94240</val>
+          <val>94240</val>
+          <val>92235</val>
+          <val>92235</val>
+          <val>92235</val>
+          <val>94239</val>
+          <val>95241</val>
+        </isos>
+        <sources>
+          <val>rep_sfr_tru</val>
+          <val>rep_lwr_tru</val>
+          <val>rep_sfr_u</val>
+          <val>dep_u</val>
+          <val>nat_u</val>
+          <val>rep_lwr_tru</val>
+          <val>rep_lwr_tru</val>
+        </sources>
+        <process_time>12</process_time>
+      </StreamBlender>
+    </config>
+  </facility>
+\end{lstlisting}
+}
+\end{frame}

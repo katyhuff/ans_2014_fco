@@ -1,34 +1,52 @@
-\subsection{Commodity Converter Facility}
-
-One versatile facility model contributed by this work is the 
-CommodityConverter, a simple representation of timed commodity transformation. After receiving a resource
+% --------------------------------------------------------------
+\begin{frame}[fragile]
+  \frametitle{Storage Facility}
+Two storage facilities were needed. One would conduct spent fuel cooling from
+the LWRs and the other would do the same for the SFRs. 
+\begin{figure}[htbp!]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{cc_inherit}
+\end{center}
+\caption{Utilizes interfaces defined in Cyclus.}
+\label{fig:cc_inherit}
+\end{figure}
+\end{frame}
+% --------------------------------------------------------------
+\begin{frame}[fragile]
+  \frametitle{Archetype Definition}
+Only one archetype is needed for this:  a simple representation of timed commodity transformation. 
+ I called it CommodityConverter, and it accepts the following configuration variables:
+\begin{itemize}
+\item incoming commodity
+\item outgoing commodity 
+\item maximum capacity
+\item delay time
+\end{itemize}
+\end{frame}
+% --------------------------------------------------------------
+\begin{frame}[fragile]
+  \frametitle{Behavior}
+After receiving a resource
 (e.g., a material), this facility waits for a user-defined time period. Once
 that time period has passed, the resource is offered to the resource exchange
-system as a new commodity type. With this behavior, the Commodity Converter
-facility is ideal for representing storage.  In that case, this model requests a commodity 
-such as spent fuel, then waits for a cooling period before offering the same 
-Material Resource as a cooled spent fuel Commodity.
-
-\begin{table}[h!]
-\centering
-\begin{tabular}{|l|r|r|r|}
-\hline
-\textbf{Parameter} & \textbf{Units} & \textbf{Default} & \textbf{Range}\\
-\hline
-Input Commodity& string & ``'' & any string\\
-Output Commodity& string & ``'' & any string\\
-Delay Time & months & $0$ & $0-\infty$\\
-Storage Capacity & kg & $\infty$ &$0-\infty$ \\
-\hline
-\end{tabular}
-\caption{Input parameters for the Commodity Converter Facility Agent}
-\label{tab:commodconverter}
-\end{table}
-
-
-Note that Commodity and Material are distinct concepts in the \Cyclus framework.
-A Material is a subtype of Resource. All Resources have a Commodity type. A
-single Material composition in \Cyclus can therefore be a ``fuel'' or``waste''
-Commodity or any arbitrary string registered within the simulation, 
-irrespective of the isotopic composition. 
-
+system as a new commodity type. 
+\end{frame}
+% --------------------------------------------------------------
+\begin{frame}[fragile]
+  \frametitle{Code To Code Input Snippet}
+\begin{lstlisting}
+  <facility>
+    <name>LWRWetStorage</name>
+    <lifetime>1200</lifetime>
+    <config>
+      <CommodConverter>
+        <in_commod>lwr_unf</in_commod>
+        <in_recipe>lwr_unf_recipe</in_recipe>
+        <out_commod>lwr_unf_cool</out_commod>
+        <out_recipe>lwr_unf_recipe</out_recipe>
+        <process_time>48</process_time>
+      </CommodConverter>
+    </config>
+  </facility>
+\end{lstlisting}
+\end{frame}
