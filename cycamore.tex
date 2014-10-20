@@ -1,0 +1,117 @@
+
+
+
+% --------------------------------------------------------------
+\begin{frame}[fragile]
+  \frametitle{Available Archetypes}
+  \begin{itemize}
+\item The \textbf{GrowthRegion} archetype maintains a power generation profile specified by the user. 
+\item The reactors can be represented by the existing \textbf{BatchReactor} 
+facility archetype.
+\item The Mine and Repository can be represented by the \textbf{Source} and 
+\textbf{Sink}.
+\end{itemize}
+\end{frame}
+
+% --------------------------------------------------------------
+\begin{frame}[fragile]
+  \frametitle{Available Archetypes}
+\footnotesize{
+\begin{lstlisting}
+  <archetypes>
+    <spec>
+      <lib>cycamore</lib><name>Source</name>
+    </spec>
+    <spec>
+      <lib>cycamore</lib><name>EnrichmentFacility</name>
+    </spec>
+    <spec>
+      <lib>cycamore</lib><name>GrowthRegion</name>
+    </spec>
+    <spec>
+      <lib>cycamore</lib><name>BatchReactor</name>
+    </spec>
+    <spec>
+      <lib>cycamore</lib><name>Sink</name>
+    </spec>
+\end{lstlisting}
+\ldots
+}
+\end{frame}
+
+% --------------------------------------------------------------
+\begin{frame}[fragile]
+  \frametitle{Available Region}
+\footnotesize{
+  \begin{lstlisting}
+  <region>
+    <name>SingleRegion</name>
+    <config>
+      <GrowthRegion>
+        <commodity_name>power</commodity_name>
+        <demand_types>
+          <val>linear</val>
+        </demand_types>
+        <demand_params>
+          <val>0 90</val> <!-- slope intercept -->
+        </demand_params>
+        <demand_times>
+          <val>1</val>
+        </demand_times>
+      </GrowthRegion>
+    </config>
+    <institution>
+\end{lstlisting}
+}
+\end{frame}
+% --------------------------------------------------------------
+\begin{frame}[fragile]
+  \frametitle{Available Source and Sink}
+  \begin{lstlisting}
+  <facility>
+    <name>Mine</name>
+    <lifetime>1200</lifetime>
+    <config>
+      <Source>
+        <out_commod>nat_u</out_commod>
+        <recipe_name>nat_u_recipe</recipe_name>
+        <capacity>200000</capacity>
+      </Source>
+    </config>
+  </facility>
+\end{lstlisting}
+\end{frame} 
+% --------------------------------------------------------------
+\begin{frame}[fragile]
+  \frametitle{Available Reactors}
+  \footnotesize{
+\begin{lstlisting}
+  <facility>
+    <name>LWR</name>
+    <lifetime>1200</lifetime>
+    <config>
+      <BatchReactor>
+        <fuel>
+         <incommodity>fresh_lwr_fuel</incommodity>
+         <inrecipe>fresh_lwr_fuel_recipe</inrecipe>
+         <outcommodity>lwr_unf</outcommodity>
+         <outrecipe>lwr_unf_recipe</outrecipe>
+        </fuel>
+        <processtime>12</processtime>
+        <nbatches>9</nbatches> 
+        <!-- Can only be an integer 4.5*2.0 = 9-->
+        <batchsize>9950.0</batchsize> 
+        <!-- adjusted per above 19.91/2.0 = 9.95-->
+        <nreload>2</nreload> 
+        <!-- as per above, 9.0/4.5 = 2 -->
+        <commodity_production>
+          <commodity>power</commodity>
+          <capacity>90</capacity>
+          <cost>90</cost>
+        </commodity_production>
+      </BatchReactor>
+    </config>
+  </facility>
+\end{lstlisting}
+  }
+\end{frame}
