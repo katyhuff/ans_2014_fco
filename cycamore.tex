@@ -86,7 +86,7 @@ facility archetype.
 % --------------------------------------------------------------
 \begin{frame}[fragile]
   \frametitle{Available Reactors}
-  \footnotesize{
+  \lstset{basicstyle=\tiny\ttfamily}
 \begin{lstlisting}
   <facility>
     <name>LWR</name>
@@ -101,11 +101,8 @@ facility archetype.
         </fuel>
         <processtime>12</processtime>
         <nbatches>9</nbatches> 
-        <!-- Can only be an integer 4.5*2.0 = 9-->
         <batchsize>9950.0</batchsize> 
-        <!-- adjusted per above 19.91/2.0 = 9.95-->
         <nreload>2</nreload> 
-        <!-- as per above, 9.0/4.5 = 2 -->
         <commodity_production>
           <commodity>power</commodity>
           <capacity>90</capacity>
@@ -115,5 +112,6 @@ facility archetype.
     </config>
   </facility>
 \end{lstlisting}
-  }
 \end{frame}
+
+

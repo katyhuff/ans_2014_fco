@@ -58,7 +58,7 @@
 \definecolor{cyan}{rgb}{0.0,0.6,0.6}
 
 \lstset{
-  basicstyle=\tiny\ttfamily,
+  basicstyle=\footnotesize\ttfamily,
   columns=fullflexible,
   showstringspaces=false,
   commentstyle=\color{gray}\upshape
@@ -81,10 +81,15 @@
 % Those icons  in the references are terrible looking.
 \setbeamertemplate{bibliography item}[text]
 
+% Let's print Cyclus properly.
+\usepackage{xspace}
+\newcommand{\Cyclus}{\textsc{Cyclus}\xspace}%
+\newcommand{\Cycamore}{\textsc{Cycamore}\xspace}%
 
-\title{Module development for FCO analysis}
+
+\title{Extensions to the \Cyclus Ecosystem for Market Driven Transition Analysis}
 \author[Kathryn D. Huff]{\includegraphics[height=2cm]{bk}\\Kathryn D. Huff}
-\date{October 23, 2014}
+\date{November 11, 2014}
 \begin{document}
 \maketitle
 
